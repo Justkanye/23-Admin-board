@@ -10,10 +10,10 @@ const SamplePage = () => {
     const products = useSelector((state) => state.products);
     const [allowedProducts, setAllowedProducts] = useState(10);
     const handleClick = () => setAllowedProducts(allowedProducts + 10);
-    const num = ( products.products.length > allowedProducts) ? allowedProducts : 50;
+    const num = ( products.products.length > allowedProducts) ? 50 : allowedProducts;
 
     useEffect(() => {
-        if (!(products.products.length) ||( num > products.products.length) || !(products.isLoading && products.hasLoaded)) {
+        if (( num > products.products.length) || !(products.isLoading && products.hasLoaded)) {
             try {
                 dispatcher({ type: LOADING_PRODUCTS });
                 axios.get(`https://fakerapi.it/api/v1/products?_quantity=${num}`).then((response) => {

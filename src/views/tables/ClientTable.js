@@ -8,9 +8,9 @@ const ClientTable = () => {
     const dispatcher = useDispatch();
     const clients = useSelector((state) => state.clients);
     const [allowedRows, setAllowedRows] = useState(10);
-    const num = (clients.clients.length > allowedRows) ? allowedRows : 50;
+    const num = (clients.clients.length > allowedRows) ? 50 : allowedRows;
     useEffect(() => {
-        if (!(clients.clients.length) || (num > clients.clients.length) || !(clients.isLoading && clients.hasLoaded)) {
+        if ((num > clients.clients.length) || !(clients.isLoading && clients.hasLoaded)) {
             try {
                 dispatcher({ type: LOADING_CLIENTS });
                 axios.get(`https://fakerapi.it/api/v1/persons?_quantity=${num}`).then((response) => {
