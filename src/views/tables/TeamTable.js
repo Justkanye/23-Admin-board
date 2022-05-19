@@ -12,11 +12,7 @@ const ClientTable = () => {
 
     const num = teamMembers.teamMembers.length && teamMembers.teamMembers.length > allowedRows ? 50 : allowedRows;
     useEffect(() => {
-        if (
-            !teamMembers.teamMembers.length ||
-            allowedRows > teamMembers.teamMembers.length ||
-            !(teamMembers.isLoading && teamMembers.hasLoaded)
-        ) {
+        if (!teamMembers.teamMembers.length || num > teamMembers.teamMembers.length || !(teamMembers.isLoading && teamMembers.hasLoaded)) {
             try {
                 dispatcher({ type: LOAD_TEAM_ERROR });
                 axios.get(`https://fakerapi.it/api/v1/companies?_quantity=${num}`).then((response) => {
@@ -30,7 +26,7 @@ const ClientTable = () => {
                 dispatcher({ type: LOAD_TEAM_ERROR });
             }
         }
-    }, [num, dispatcher, allowedRows, teamMembers.teamMembers, teamMembers.isLoading, teamMembers.hasLoaded]);
+    }, [num, dispatcher, teamMembers.teamMembers, teamMembers.isLoading, teamMembers.hasLoaded]);
 
     return (
         <BootstrapTable
