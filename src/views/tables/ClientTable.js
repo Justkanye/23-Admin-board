@@ -8,7 +8,7 @@ const ClientTable = () => {
     const dispatcher = useDispatch();
     const clients = useSelector((state) => state.clients);
     const [allowedRows, setAllowedRows] = useState(10);
-    const num = clients.clients.length && clients.clients.length > allowedRows ? 50 : allowedRows;
+    const num = (clients.clients.length > allowedRows) ? 50 : allowedRows;
     useEffect(() => {
         if (!(clients.clients.length) || (num > clients.clients.length) || !(clients.isLoading && clients.hasLoaded)) {
             try {

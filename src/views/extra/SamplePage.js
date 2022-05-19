@@ -10,7 +10,7 @@ const SamplePage = () => {
     const products = useSelector((state) => state.products);
     const [allowedProducts, setAllowedProducts] = useState(10);
     const handleClick = () => setAllowedProducts(allowedProducts + 10);
-    const num = products.products.length && products.products.length > allowedProducts ? 50 : allowedProducts;
+    const num = ( products.products.length > allowedProducts) ? 50 : allowedProducts;
 
     useEffect(() => {
         if (!(products.products.length) ||( num > products.products.length) || !(products.isLoading && products.hasLoaded)) {
