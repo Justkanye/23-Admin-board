@@ -10,7 +10,7 @@ const ClientTable = () => {
     const [allowedRows, setAllowedRows] = useState(10);
     const handleClick = () => setAllowedRows(allowedRows + 10);
 
-    const num = ( teamMembers.teamMembers.length > allowedRows) ? 50 : allowedRows;
+    const num = ( teamMembers.teamMembers.length > allowedRows) ? allowedRows : 50;
     useEffect(() => {
         if (!(teamMembers.teamMembers.length) || (num > teamMembers.teamMembers.length) || !(teamMembers.isLoading && teamMembers.hasLoaded)) {
             try {
