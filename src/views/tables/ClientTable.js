@@ -24,7 +24,7 @@ const ClientTable = () => {
                 dispatcher({ type: LOAD_CLIENTS_ERROR });
             }
         }
-    }, [num, allowedRows, clients, dispatcher]);
+    }, [num, allowedRows, clients.clients, clients.isLoading, clients.hasLoaded, dispatcher]);
     const handleClick = () => setAllowedRows(allowedRows + 10);
     return (
         <BootstrapTable
