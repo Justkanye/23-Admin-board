@@ -9,10 +9,14 @@ const ClientTable = () => {
     const teamMembers = useSelector((state) => state.team);
     const [allowedRows, setAllowedRows] = useState(10);
     const handleClick = () => setAllowedRows(allowedRows + 10);
-
-    const num = ( teamMembers.teamMembers.length > allowedRows) ? 50 : allowedRows;
+    let num = 50;
+    if (allowedRows > num) {
+        num = allowedRows;
+    } else {
+        num = 50;
+    }
     useEffect(() => {
-        if ((num > teamMembers.teamMembers.length) || !(teamMembers.isLoading && teamMembers.hasLoaded)) {
+        if (num > teamMembers.teamMembers.length) {
             try {
                 dispatcher({ type: LOADING_TEAM });
                 axios.get(`https://fakerapi.it/api/v1/companies?_quantity=${num}`).then((response) => {
