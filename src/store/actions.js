@@ -1,0 +1,20 @@
+export const COLLAPSE_MENU = 'COLLAPSE_MENU';
+export const COLLAPSE_TOGGLE = 'COLLAPSE_TOGGLE';
+
+export const NAV_COLLAPSE_LEAVE = 'NAV_COLLAPSE_LEAVE';
+export const NAV_CONTENT_LEAVE = 'NAV_CONTENT_LEAVE';
+
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+
+export const SIGNUP = 'SIGNUP';
+
+export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
+export const LOADING_PRODUCTS = 'LOADING_PRODUCTS';
+export const LOAD_PRODUCTS_ERROR = 'LOAD_PRODUCTS_ERROR';
+export const LOAD_CLIENTS = 'LOAD_CLIENTS';
+export const LOADING_CLIENTS = 'LOADING_CLIENTS';
+export const LOAD_CLIENTS_ERROR = 'LOAD_CLIENTS_ERROR';
+export const LOAD_TEAM = 'LOAD_TEAM';
+export const LOADING_TEAM = 'LOADING_TEAM';
+export const LOAD_TEAM_ERROR = 'LOAD_TEAM_ERROR';
