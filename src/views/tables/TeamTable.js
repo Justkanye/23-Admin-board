@@ -30,7 +30,7 @@ const ClientTable = () => {
                 dispatcher({ type: LOAD_TEAM_ERROR });
             }
         }
-    }, [num]);
+    }, [num, dispatcher, allowedRows, teamMembers]);
 
     return (
         <BootstrapTable

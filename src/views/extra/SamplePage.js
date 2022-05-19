@@ -27,7 +27,7 @@ const SamplePage = () => {
                 dispatcher({ type: LOAD_PRODUCTS_ERROR });
             }
         }
-    }, [num]);
+    }, [num, dispatcher, products, allowedProducts]);
 
     return (
         <React.Fragment>
