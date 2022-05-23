@@ -14,10 +14,10 @@ const menuItems = {
                     icon: 'feather icon-home'
                 },
                 {
-                    id: 'charts',
-                    title: 'Charts',
+                    id: 'Statistics',
+                    title: 'Statistics',
                     type: 'item',
-                    url: '/charts',
+                    url: '/stats',
                     icon: 'feather icon-pie-chart'
                 },
                 {
